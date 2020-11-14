@@ -15,7 +15,7 @@ export default function Home({ authed }) {
 
   return (
     <div>
-      <h1>Home Page</h1>
+      <h1>Welcome to React-Pinterest</h1>
       {loadComponent()}
     </div>
   );
