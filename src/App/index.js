@@ -1,17 +1,30 @@
 import React from 'react';
 import firebase from 'firebase/app';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+} from 'react-router-dom';
 import fbConnection from '../helpers/data/connection';
 
-import Auth from '../components/Auth';
 import MyNavbar from '../components/MyNavbar';
-import BoardContainer from '../components/BoardContainer';
+
+import Home from '../views/Home';
+import BoardForm from '../views/BoardForm';
+import Boards from '../views/Boards';
+import PinDetails from '../views/PinDetails';
+import PinForm from '../views/PinForm';
+import Pins from '../views/Pins';
+import SingleBoard from '../views/SingleBoard';
+import NotFound from '../views/NotFound';
 
 fbConnection();
 
 class App extends React.Component {
   state = {
     authed: false,
-  }
+  };
 
   componentDidMount() {
     this.removeListener = firebase.auth().onAuthStateChanged((user) => {
@@ -29,20 +42,22 @@ class App extends React.Component {
 
   render() {
     const { authed } = this.state;
-    const loadComponent = () => {
-      let component = '';
-      if (authed) {
-        component = <BoardContainer />;
-      } else {
-        component = <Auth />;
-      }
-      return component;
-    };
 
     return (
-      <div className="App">
+      <div className='App'>
         <MyNavbar authed={authed} />
-        {loadComponent()}
+        <Router>
+          <Switch>
+            <Route exact path='/' component={() => <Home authed={authed} name='Dr. T' />} />
+            <Route exact path='/pin-details' component={() => <PinDetails authed={authed} name='Dr. T' />} />
+            <Route exact path='/pins' component={() => <Pins authed={authed} name='Dr. T' />} />
+            <Route exact path='/pin-form' component={() => <PinForm authed={authed} name='Dr. T' />} />
+            <Route exact path='/single-board' component={() => <SingleBoard authed={authed} name='Dr. T' />} />
+            <Route exact path='/board-form' component={() => <BoardForm authed={authed} name='Dr. T' />} />
+            <Route exact path='/boards' component={() => <Boards authed={authed} name='Dr. T' />} />
+            <Route component={NotFound} />
+          </Switch>
+        </Router>
       </div>
     );
   }
