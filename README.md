@@ -30,6 +30,10 @@
 - Search History (stretch)
 - Comments (stretch)
 
+### Starter ERD
+
+![starter ERD](./starter_erd.png)
+
 ## Deployment
 See detailed instructions [here](https://github.com/nss-evening-cohort-13/deploy-react-app-with-netlify/blob/main/README.md)
 
