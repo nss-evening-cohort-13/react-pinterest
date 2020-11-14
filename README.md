@@ -19,18 +19,44 @@
 
 #### Example Routes using `react-router-dom`
 ```javascript
-<Router>
-  <Switch>
-    <Route exact path='/' component={() => <Home authed={authed} name='Dr. T' />} />
-    <Route exact path='/pin-details' component={() => <PinDetails authed={authed} name='Dr. T' />} />
-    <Route exact path='/pins' component={() => <Pins authed={authed} name='Dr. T' />} />
-    <Route exact path='/pin-form' component={() => <PinForm authed={authed} name='Dr. T' />} />
-    <Route exact path='/single-board' component={() => <SingleBoard authed={authed} name='Dr. T' />} />
-    <Route exact path='/board-form' component={() => <BoardForm authed={authed} name='Dr. T' />} />
-    <Route exact path='/boards' component={() => <Boards authed={authed} name='Dr. T' />} />
-    <Route component={() => <Home authed={authed} name='Dr. T' />} />
-  </Switch>
-</Router>
+<Switch>
+        <Route
+          exact
+          path='/'
+          component={() => <Home authed={authed} />}
+        />
+        <Route
+          exact
+          path='/pin-details'
+          component={() => <PinDetails authed={authed} />}
+        />
+        <Route
+          exact
+          path='/pins'
+          component={() => <Pins authed={authed} />}
+        />
+        <Route
+          exact
+          path='/pin-form'
+          component={() => <PinForm authed={authed} />}
+        />
+        <Route
+          exact
+          path='/single-board'
+          component={() => <SingleBoard authed={authed} />}
+        />
+        <Route
+          exact
+          path='/board-form'
+          component={() => <BoardForm authed={authed} />}
+        />
+        <Route
+          exact
+          path='/boards'
+          component={() => <Boards authed={authed} />}
+        />
+        <Route component={NotFound} />
+      </Switch>
 ```
 
 ### Components
