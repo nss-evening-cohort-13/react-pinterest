@@ -18,7 +18,7 @@
 - PinForm
 
 #### Example Routes using `react-router-dom`
-```
+```javascript
 <Router>
   <Switch>
     <Route exact path='/' component={() => <Home authed={authed} name='Dr. T' />} />
