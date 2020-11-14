@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import { Link } from 'react-router-dom';
 
 export default class MyNavbar extends Component {
   logMeOut = (e) => {
@@ -20,6 +21,12 @@ export default class MyNavbar extends Component {
 
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li className="nav-item">
+              <Link className="nav-link" to='/boards'>Boards</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to='/pins'>Pins</Link>
+            </li>
             </ul>
 
             <div className="form-inline my-2 my-lg-0">

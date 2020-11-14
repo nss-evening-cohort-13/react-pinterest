@@ -2,7 +2,7 @@ import React from 'react';
 import BoardContainer from '../components/BoardContainer';
 import Auth from '../components/Auth';
 
-export default function Home({ authed, name }) {
+export default function Home({ authed }) {
   const loadComponent = () => {
     let component = '';
     if (authed) {
@@ -15,7 +15,7 @@ export default function Home({ authed, name }) {
 
   return (
     <div>
-      <h1>Home Page: {name}</h1>
+      <h1>Home Page</h1>
       {loadComponent()}
     </div>
   );
