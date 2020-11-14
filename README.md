@@ -6,6 +6,15 @@
 - [Here is the overview](https://www.educreations.com/lesson/view/react-pinterest-planning/56971203/?s=Ysi5qH&ref=app) of what we decided as a class to complete for our React Pinterest project
 - [Issue Ticket](https://github.com/nss-evening-cohort-13/student-help/issues/112) for discussion
 
+### Views
+- Home
+- Boards
+- Pins (see all the pins the user has created)
+- SingleBoard (See all the pins on the board)
+- PinDetails
+- BoardForm
+- PinForm
+
 ## Deployment
 See detailed instructions [here](https://github.com/nss-evening-cohort-13/deploy-react-app-with-netlify/blob/main/README.md)
 
