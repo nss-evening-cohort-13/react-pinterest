@@ -17,6 +17,22 @@
 - BoardForm
 - PinForm
 
+#### Example Routes using `react-router-dom`
+```
+<Router>
+  <Switch>
+    <Route exact path='/' component={() => <Home authed={authed} name='Dr. T' />} />
+    <Route exact path='/pin-details' component={() => <PinDetails authed={authed} name='Dr. T' />} />
+    <Route exact path='/pins' component={() => <Pins authed={authed} name='Dr. T' />} />
+    <Route exact path='/pin-form' component={() => <PinForm authed={authed} name='Dr. T' />} />
+    <Route exact path='/single-board' component={() => <SingleBoard authed={authed} name='Dr. T' />} />
+    <Route exact path='/board-form' component={() => <BoardForm authed={authed} name='Dr. T' />} />
+    <Route exact path='/boards' component={() => <Boards authed={authed} name='Dr. T' />} />
+    <Route component={() => <Home authed={authed} name='Dr. T' />} />
+  </Switch>
+</Router>
+```
+
 ### Components
 - Board
 - Pin
