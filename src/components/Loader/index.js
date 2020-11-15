@@ -1,4 +1,4 @@
-const loaders = () => (
+const Loader = () => (
   <div className="mt-5">
     <div className="spinner-grow text-primary" role="status">
       <span className="sr-only">Loading...</span>
@@ -16,4 +16,4 @@ const loaders = () => (
   </div>
 );
 
-export default loaders;
+export default Loader;
