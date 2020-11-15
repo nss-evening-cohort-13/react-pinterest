@@ -9,7 +9,7 @@ export default function Home({ user }) {
     if (user === null) {
       component = <Loader />;
     } else if (user) {
-      component = <Boards user={user}/>;
+      component = 'Load all non-private pins here';
     } else {
       component = <Auth />;
     }
