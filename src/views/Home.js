@@ -3,12 +3,12 @@ import Boards from './Boards';
 import Auth from '../components/Auth';
 import Loader from '../components/Loader';
 
-export default function Home({ authed }) {
+export default function Home({ user }) {
   const loadComponent = () => {
     let component = '';
-    if (authed === null) {
+    if (user === null) {
       component = <Loader />;
-    } else if (authed) {
+    } else if (user) {
       component = <Boards />;
     } else {
       component = <Auth />;

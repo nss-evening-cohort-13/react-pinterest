@@ -10,7 +10,7 @@ export default class MyNavbar extends Component {
   }
 
   render() {
-    const { authed } = this.props;
+    const { user } = this.props;
     return (
       <div className="MyNavbar">
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -30,7 +30,7 @@ export default class MyNavbar extends Component {
             </ul>
 
             <div className="form-inline my-2 my-lg-0">
-              {authed && (
+              {user && (
                 <button className="nav-link btn btn-danger" onClick={this.logMeOut}>Logout</button>
               )}
             </div>

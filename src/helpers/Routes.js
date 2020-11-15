@@ -9,43 +9,43 @@ import Pins from '../views/Pins';
 import SingleBoard from '../views/SingleBoard';
 import NotFound from '../views/NotFound';
 
-export default function Routes({ authed }) {
+export default function Routes({ user }) {
   return (
       <Switch>
         <Route
           exact
           path='/'
-          component={() => <Home authed={authed} />}
+          component={() => <Home user={user} />}
         />
         <Route
           exact
           path='/pin-details'
-          component={() => <PinDetails authed={authed} />}
+          component={() => <PinDetails user={user} />}
         />
         <Route
           exact
           path='/pins'
-          component={() => <Pins authed={authed} />}
+          component={() => <Pins user={user} />}
         />
         <Route
           exact
           path='/pin-form'
-          component={() => <PinForm authed={authed} />}
+          component={() => <PinForm user={user} />}
         />
         <Route
           exact
           path='/boards/:id'
-          component={(props) => <SingleBoard authed={authed} {...props} />}
+          component={(props) => <SingleBoard user={user} {...props} />}
         />
         <Route
           exact
           path='/board-form'
-          component={() => <BoardForm authed={authed} />}
+          component={() => <BoardForm user={user} />}
         />
         <Route
           exact
           path='/boards'
-          component={() => <Boards authed={authed} />}
+          component={() => <Boards user={user} />}
         />
         <Route component={NotFound} />
       </Switch>
