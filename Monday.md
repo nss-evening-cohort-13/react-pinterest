@@ -10,3 +10,8 @@
 
 ## Done:
 - [All User Boards View](https://github.com/nss-evening-cohort-13/react-pinterest/blob/main/src/views/Boards.js)
+- [Loader](https://github.com/nss-evening-cohort-13/react-pinterest/blob/main/src/components/Loader/index.js)
+
+## We will do together in class:
+- Firebase image upload
+- Search bar (stretch)
