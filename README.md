@@ -13,7 +13,7 @@
 
 ### Views
 - Home
-- Boards
+- [Boards](https://github.com/nss-evening-cohort-13/react-pinterest/blob/main/src/views/Boards.js)
 - Pins (see all the pins the user has created)
 - SingleBoard (See all the pins on the board)
 - PinDetails
