@@ -10,6 +10,11 @@ class SearchInput extends Component {
   handleSubmit= (e) => {
     e.preventDefault();
     this.props.history.push(`/search/${this.state.text}/${this.state.type}`);
+
+    this.setState({
+      type: 'pins',
+      text: '',
+    });
   }
 
   handleChange = (e) => {
@@ -21,8 +26,8 @@ class SearchInput extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <input type='text' name='text' onChange={this.handleChange} />
-        <select name='type' onChange={this.handleChange} >
+        <input type='text' name='text' value={this.state.text} onChange={this.handleChange} />
+        <select name='type' value={this.state.type} onChange={this.handleChange} >
           <option value='pins'>Pins</option>
           <option value='boards'>Boards</option>
         </select>
