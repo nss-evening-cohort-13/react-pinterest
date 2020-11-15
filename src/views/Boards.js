@@ -34,11 +34,10 @@ export default class Boards extends React.Component {
     );
     return (
       <>
-        { loading || !this.props.user ? (
+        { loading ? (
           <Loader />
         ) : (
           <>
-          <h1>Hi, {this.props.user.displayName.split(' ')[0]}!</h1>
           <h2>Here are all of your boards</h2>
           <div className='d-flex flex-wrap container'>{showBoards()}</div>
           </>

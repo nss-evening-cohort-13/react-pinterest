@@ -32,11 +32,10 @@ class App extends React.Component {
 
   render() {
     const { user } = this.state;
-
     return (
       <div className='App'>
         <Router>
-          <MyNavbar user={user} />
+          <MyNavbar user={user}/>
           <Routes user={user} />
         </Router>
       </div>
