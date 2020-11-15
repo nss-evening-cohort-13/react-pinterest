@@ -1,7 +1,8 @@
 import React from 'react';
-import { getAllBoards } from '../helpers/data/boardData';
+import { getAllUserBoards } from '../helpers/data/boardData';
 import BoardsCard from '../components/Cards/BoardsCard';
 import Loader from '../components/Loader';
+import getUid from '../helpers/data/authData';
 
 export default class Boards extends React.Component {
   state = {
@@ -10,7 +11,8 @@ export default class Boards extends React.Component {
   }
 
   componentDidMount() {
-    getAllBoards().then((response) => {
+    const currentUserId = getUid();
+    getAllUserBoards(currentUserId).then((response) => {
       this.setState({
         boards: response,
       }, this.setLoading);
