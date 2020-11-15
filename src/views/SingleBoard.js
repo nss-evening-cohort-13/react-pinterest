@@ -18,18 +18,25 @@ export default class SingleBoard extends React.Component {
       });
     });
 
-    // 1. Make a call to the API that returns the pins associated with this board.
-    getBoardPins(boardId).then((response) => {
-      response.forEach((item) => {
-        getPin(item.pinId).then((pinResponse) => {
-          // 2. Put the array of pins in state
-          this.setState({
-            pins: [...this.state.pins, pinResponse],
-          });
-        });
-      });
-    });
+    // 1. Make a call to the API that returns the pins associated with this board and set to state.
+    this.getPins(boardId)
+      .then((resp) => (
+        this.setState({ pins: resp })
+      ));
   }
+
+  getPins = (boardId) => (
+    getBoardPins(boardId).then((response) => {
+      // an array that holds all of the calls to get the pin information
+      const pinArray = [];
+      response.forEach((item) => {
+        // pushing a function that returns a promise into the pinArray
+        pinArray.push(getPin(item.pinId));
+      });
+      // returning an array of all the fullfilled promises
+      return Promise.all(pinArray);
+    })
+  )
 
   render() {
     const { pins, board } = this.state;
