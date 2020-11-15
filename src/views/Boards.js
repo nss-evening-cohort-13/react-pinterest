@@ -1,6 +1,7 @@
 import React from 'react';
 import { getAllBoards } from '../helpers/data/boardData';
 import BoardsCard from '../components/Cards/BoardsCard';
+import Loader from '../components/Loader';
 
 export default class Boards extends React.Component {
   state = {
@@ -31,30 +32,11 @@ export default class Boards extends React.Component {
     const showBoards = () => (
       boards.map((board) => <BoardsCard key={board.firebaseKey} board={board} />)
     );
-
-    const loaders = () => (
-      <div className="mt-5">
-        <div className="spinner-grow text-primary" role="status">
-          <span className="sr-only">Loading...</span>
-        </div>
-        <div className="spinner-grow text-secondary" role="status">
-          <span className="sr-only">Loading...</span>
-        </div>
-        <div className="spinner-grow text-success" role="status">
-          <span className="sr-only">Loading...</span>
-        </div>
-        <div className="spinner-grow text-danger" role="status">
-          <span className="sr-only">Loading...</span>
-        </div>
-        <div>Loading...</div>
-      </div>
-    );
-
     return (
       <>
         <h1>All the boards</h1>
         {loading ? (
-          loaders()
+          <Loader />
         ) : (
           <div className='d-flex flex-wrap container'>{showBoards()}</div>
         )}
