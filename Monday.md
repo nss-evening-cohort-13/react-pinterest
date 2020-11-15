@@ -14,4 +14,4 @@
 
 ## We will do together in class:
 - Firebase image upload
-- Search bar (stretch)
+- [Search bar (stretch)](https://github.com/nss-evening-cohort-13/react-pinterest/pull/5/files)
