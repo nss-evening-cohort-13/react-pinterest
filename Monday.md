@@ -1,5 +1,6 @@
 ## Todo:
 
+- Create users table that stores users
 - Create home page with all non-private pins
 - Create user pins page with all user pins
 - Complete Single Board View
