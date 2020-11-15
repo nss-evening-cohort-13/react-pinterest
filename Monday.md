@@ -1,5 +1,6 @@
 ## Todo:
 
+- Create users table that stores users
 - Create home page with all non-private pins
 - Create user pins page with all user pins
 - Complete Single Board View
@@ -9,3 +10,8 @@
 
 ## Done:
 - [All User Boards View](https://github.com/nss-evening-cohort-13/react-pinterest/blob/main/src/views/Boards.js)
+- [Loader](https://github.com/nss-evening-cohort-13/react-pinterest/blob/main/src/components/Loader/index.js)
+
+## We will do together in class:
+- Firebase image upload
+- Search bar (stretch)
