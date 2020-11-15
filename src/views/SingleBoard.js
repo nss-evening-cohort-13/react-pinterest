@@ -20,6 +20,7 @@ export default class SingleBoard extends React.Component {
 
     // 1. Make a call to the API that returns the pins associated with this board and set to state.
     this.getPins(boardId)
+      // because we did a promise.all, the response will not resolve until all the promises are completed
       .then((resp) => (
         this.setState({ pins: resp })
       ));
@@ -34,7 +35,7 @@ export default class SingleBoard extends React.Component {
         pinArray.push(getPin(item.pinId));
       });
       // returning an array of all the fullfilled promises
-      return Promise.all(pinArray);
+      return Promise.all([...pinArray]);
     })
   )
 
