@@ -9,7 +9,7 @@ export default function Home({ user }) {
     if (user === null) {
       component = <Loader />;
     } else if (user) {
-      component = <Boards />;
+      component = <Boards user={user}/>;
     } else {
       component = <Auth />;
     }
