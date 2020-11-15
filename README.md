@@ -8,6 +8,9 @@
 - [Here is the overview](https://www.educreations.com/lesson/view/react-pinterest-planning/56971203/?s=Ysi5qH&ref=app) of what we decided as a class to complete for our React Pinterest project
 - [Issue Ticket](https://github.com/nss-evening-cohort-13/student-help/issues/112) for discussion
 
+## Monday Night
+- [TODO](https://github.com/nss-evening-cohort-13/react-pinterest/blob/main/Monday.md)
+
 ### Views
 - Home
 - Boards
