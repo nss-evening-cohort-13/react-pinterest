@@ -9,6 +9,7 @@
 - CREATE: Create users table that stores users (Stretch)
 
 ## Done:
+- [Authentication](https://github.com/nss-evening-cohort-13/react-pinterest/pull/1/files)
 - [All User Boards View](https://github.com/nss-evening-cohort-13/react-pinterest/blob/main/src/views/Boards.js)
 - [Loader](https://github.com/nss-evening-cohort-13/react-pinterest/blob/main/src/components/Loader/index.js)
 
