@@ -1,9 +1,10 @@
 import React from 'react';
+import BoardForma from '../components/Forms/BoardForm';
 
 export default function BoardForm() {
   return (
     <div>
-      <h1>Board Form</h1>
+      {<BoardForma board={''} />}
     </div>
   );
 }
