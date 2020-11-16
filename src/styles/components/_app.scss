@@ -2,3 +2,12 @@
 .App {
   text-align: center;
 }
+
+.search-input {
+  margin-left: 20px;
+  width: 900px;
+
+  @media only screen and (max-width: 600px) {
+      width: 300px;
+  }
+}

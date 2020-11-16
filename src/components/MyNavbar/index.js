@@ -38,8 +38,10 @@ export default function MyNavbar(props) {
                 Pins
               </Link>
             </NavItem>
+            <NavItem>
+              <SearchInput {...props} />
+            </NavItem>
           </Nav>
-          <SearchInput {...props} />
           {/* "Optional chaining operator: (?.)" gives the prop time to load without throwing errors. Only use this if you know your props are correct and need time to load. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining */}
           {
             user
