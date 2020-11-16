@@ -19,13 +19,13 @@ export default function Routes({ user }) {
         />
         <Route
           exact
-          path='/pin-details'
-          component={() => <PinDetails user={user} />}
+          path='/pins'
+          component={() => <Pins user={user} />}
         />
         <Route
           exact
-          path='/pins'
-          component={() => <Pins user={user} />}
+          path='/pins/:id'
+          component={() => <PinDetails user={user} />}
         />
         <Route
           exact

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function PinsCard({ pin }) {
   return (
-    <Link className='whole-card' to={`/pin-edit/${pin.firebaseKey}`}>
+    <Link className='whole-card' to={`/pins/${pin.firebaseKey}`}>
       <div
         style={{ backgroundImage: `url(${pin.imageUrl})` }}
         className='card board-card m-2'

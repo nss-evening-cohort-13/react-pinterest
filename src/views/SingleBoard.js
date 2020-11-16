@@ -50,19 +50,23 @@ export default class SingleBoard extends React.Component {
     const { pins, board } = this.state;
     const { user } = this.props;
     const renderPins = () => (
-      pins.map((pin) => (
-         <PinsCard key={pin.firebaseKey} pin={pin} />
-      ))
+      pins.length
+        ? pins.map((pin) => (
+          <PinsCard key={pin.firebaseKey} pin={pin} />
+        )) : (
+          <h2>PLACE "ADD PIN BUTTON" HERE</h2>
+        )
     );
 
     // 3. Render the pins on the DOM
     return (
       <div>
+        <AppModal title={'Edit Board'} btnColor={'warning'} icon={'fa-pen-nib'} className='align-right'>
+          <BoardForm board={board} onUpdate={this.getBoardInfo} />
+        </AppModal>
         <PageHeader user={user} />
         <h1>{board.name} Board Pins</h1>
-        <AppModal title={'Update Board'} btnColor={'info'} icon={'fa-pen-nib'}>
-            <BoardForm board={board} onUpdate={this.getBoardInfo} />
-          </AppModal>
+        <h4>{board.description}</h4>
         <div className='d-flex flex-wrap container justify-content-center'>
           {renderPins()}
         </div>
