@@ -4,10 +4,14 @@
 }
 
 .search-input {
-  margin-left: 20px;
-  width: 900px;
+  // margin-left: 20px;
+  // width: 900px;
 
-  @media only screen and (max-width: 600px) {
-      width: 300px;
-  }
+  // @media only screen and (max-width: 600px) {
+  //     width: 300px;
+  // }
+}
+
+.container {
+  margin-bottom: 100px;
 }

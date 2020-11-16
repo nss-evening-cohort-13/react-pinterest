@@ -25,7 +25,7 @@ class SearchInput extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit} className="d-flex search-input">
+      <form onSubmit={this.handleSubmit} className="d-flex search-input mx-5">
         <input className="form-control" type='text' name='text' value={this.state.text} onChange={this.handleChange} placeholder={'Search...'}/>
         <select className="btn btn-secondary dropdown-toggle" name='type' value={this.state.type} onChange={this.handleChange} >
           <option value='pins'>Pins</option>

@@ -29,7 +29,7 @@ export default function MyNavbar(props) {
         <Link className="navbar-brand" to='/'>Pinterest</Link>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className='mr-auto' navbar>
+          <Nav className='flex-grow-1' navbar>
             <NavItem>
               <Link className="nav-link" to='/boards'>Boards</Link>
             </NavItem>
@@ -38,7 +38,7 @@ export default function MyNavbar(props) {
                 Pins
               </Link>
             </NavItem>
-            <NavItem>
+            <NavItem className="flex-grow-1">
               <SearchInput {...props} />
             </NavItem>
           </Nav>
