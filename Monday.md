@@ -11,7 +11,7 @@
 - [Authentication](https://github.com/nss-evening-cohort-13/react-pinterest/pull/1/files)
 - [Create Routes and Views](https://github.com/nss-evening-cohort-13/react-pinterest/pull/2/files)
 - [All User Boards View](https://github.com/nss-evening-cohort-13/react-pinterest/blob/main/src/views/Boards.js)
-- [READ: Update All Boards View to only show user boards](https://github.com/nss-evening-cohort-13/react-pinterest/pull/3/files)
+- [READ: Update All Boards View to only show user boards](https://github.com/nss-evening-cohort-13/react-pinterest/blob/main/src/helpers/data/boardData.js#L5)
 - [CREATE/UPDATE: Boards](https://github.com/nss-evening-cohort-13/react-pinterest/pull/6/files)
 - [Loader](https://github.com/nss-evening-cohort-13/react-pinterest/blob/main/src/components/Loader/index.js)
 
