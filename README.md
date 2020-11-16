@@ -4,11 +4,9 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/89146934-9ad7-47eb-b494-826987924d22/deploy-status)](https://app.netlify.com/sites/ec13-react-pinterest/deploys)
 
-## Views
 
-| Boards | Pins |
-| --- | --- |
-| <img src='./boards.png' alt='boards screen shot' style='width: 300px;'/> | <img src='./pins.png' alt='pins screen shot' style='width: 300px;'/> |
+## Views
+<img src='./react-pinterest.gif' alt='boards screen shot' style='width: 500px;'/> 
 
 
 ## Intial Plan Walk Through
