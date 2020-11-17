@@ -18,3 +18,4 @@
 ## We will do together in class:
 - [Firebase image upload](https://github.com/nss-evening-cohort-13/react-pinterest/blob/e9a44ee4e2c70d86a932b26ab9d909af9b9e89d6/src/components/Forms/BoardForm.js#L24)
 - [Search bar (stretch)](https://github.com/nss-evening-cohort-13/react-pinterest/pull/5/files)
+- [Completed functionality of Search Bar](https://github.com/nss-evening-cohort-13/react-pinterest/pull/8/files)
