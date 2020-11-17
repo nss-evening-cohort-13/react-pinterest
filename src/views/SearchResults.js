@@ -19,9 +19,9 @@ export default class SearchResults extends Component {
   performSearch = () => {
     const searchType = this.props.match.params.type;
     const searchTerm = this.props.match.params.term.toLowerCase();
-    const uid = getUid();
+    const userId = getUid();
     if (searchType === 'boards') {
-      this.getResults = searchBoards(uid, searchTerm)
+      this.getResults = searchBoards(userId, searchTerm)
         .then((results) => {
           this.setState({
             results,
@@ -30,7 +30,7 @@ export default class SearchResults extends Component {
           });
         });
     } else {
-      searchPins(uid, searchTerm).then((results) => {
+      searchPins(userId, searchTerm).then((results) => {
         this.setState({
           results,
           searchTerm,
@@ -51,13 +51,16 @@ export default class SearchResults extends Component {
   render() {
     const { results, searchType } = this.state;
     const showResults = () => (
-      results.map((result) => (
-        searchType === 'boards' ? <BoardsCard key={result.firebaseKey} board={result} /> : <PinsCard key={result.firebaseKey} pin={result} />
-      ))
+      results.length
+        ? results.map((result) => (
+          searchType === 'boards' ? <BoardsCard key={result.firebaseKey} board={result} /> : <PinsCard key={result.firebaseKey} pin={result} />
+        )) : (
+          'No Results'
+        )
     );
     return (
       <div>
-        <h1>Search Results</h1>
+        <h1 className='mt-5'>Search Results</h1>
         <div className='d-flex flex-wrap justify-content-center container'>
           {showResults()}</div>
       </div>
