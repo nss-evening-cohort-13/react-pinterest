@@ -1,9 +1,9 @@
 ## Todo:
 
-- READ: Create home page with all non-private pins
-- READ: Create user pins page with all user pins
+- READ: [Create home page with all non-private pins]((https://github.com/nss-evening-cohort-13/react-pinterest/pull/9))
+- READ: [Create user pins page with all user pins](https://github.com/nss-evening-cohort-13/react-pinterest/pull/9)
 - DELETE: Boards
-- CREATE/UPDATE/DELETE: Pins ([WIP](https://github.com/nss-evening-cohort-13/react-pinterest/pull/9))
+- CREATE/UPDATE/DELETE: Pins
 - CREATE: Create users table that stores users (Stretch)
 
 ## Done:
