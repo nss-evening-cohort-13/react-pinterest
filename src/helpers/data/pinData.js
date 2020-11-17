@@ -14,19 +14,27 @@ const getPin = (pinId) => new Promise((resolve, reject) => {
   }).catch((error) => reject(error));
 });
 
-const getAllPins = () => new Promise((resolve, reject) => {
-  axios.get(`${baseUrl}/pins.json`).then((response) => {
+const getAllUserPins = (userId) => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/pins.json?orderBy="userId"&equalTo="${userId}"`).then((response) => {
     resolve(Object.values(response.data));
   }).catch((error) => reject(error));
 });
 
-const searchPins = (uid, term) => new Promise((resolve, reject) => {
-  getAllPins().then((response) => {
+const getAllPins = (userId) => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/pins.json`).then((response) => {
     // Need to make sure that the pin either belongs to the user or is not private.
-    const filteredArray = response.filter((r) => r.userId === uid || r.private === false);
-    const searchResults = filteredArray.filter((r) => r.name.toLowerCase().includes(term) || r.description.toLowerCase().includes(term));
+    const filteredArray = Object.values(response.data).filter((r) => r.userId === userId || r.private === false);
+    resolve(filteredArray);
+  }).catch((error) => reject(error));
+});
+
+const searchPins = (userId, term) => new Promise((resolve, reject) => {
+  getAllPins(userId).then((response) => {
+    const searchResults = response.filter((r) => r.name.toLowerCase().includes(term) || r.description.toLowerCase().includes(term));
     resolve(searchResults);
   }).catch((error) => reject(error));
 });
 
-export { getBoardPins, getPin, searchPins };
+export {
+  getBoardPins, getPin, getAllUserPins, searchPins, getAllPins,
+};
