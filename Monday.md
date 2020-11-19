@@ -10,6 +10,8 @@
 - [Make Routes Private](https://github.com/nss-evening-cohort-13/react-pinterest/pull/10): We only want authenticated users into the application, so if they navigate to a URL, we want them to have to login to see the view
 
 ## Done:
+**[SEE ALL THE CODE CHANGES COMPILED << HERE](https://github.com/nss-evening-cohort-13/react-pinterest/pull/11/files)**
+
 - [Authentication](https://github.com/nss-evening-cohort-13/react-pinterest/pull/1/files)
 - [Create Routes and Views](https://github.com/nss-evening-cohort-13/react-pinterest/pull/2/files)
 - [All User Boards View](https://github.com/nss-evening-cohort-13/react-pinterest/blob/main/src/views/Boards.js)
