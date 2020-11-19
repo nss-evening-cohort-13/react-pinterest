@@ -28,26 +28,31 @@ export default function Routes({ user }) {
           exact
           path='/pin-details'
           component={() => <PinDetails user={user} />}
+          user={user}
         />
         <PrivateRoute
           exact
           path='/pins'
           component={() => <Pins user={user} />}
+          user={user}
         />
         <PrivateRoute
           exact
           path='/pin-form'
           component={() => <PinForm user={user} />}
+          user={user}
         />
         <PrivateRoute
           exact
           path='/boards/:id'
           component={(props) => <SingleBoard user={user} {...props} />}
+          user={user}
         />
         <PrivateRoute
           exact
           path='/search/:term/:type'
           component={(props) => <SearchResults {...props} />}
+          user={user}
         />
         <PrivateRoute
           exact
