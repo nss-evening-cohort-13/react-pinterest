@@ -6,6 +6,9 @@
 - CREATE/UPDATE/DELETE: Pins
 - CREATE: Create users table that stores users (Stretch)
 
+## In Class
+- [Make Routes Private](https://github.com/nss-evening-cohort-13/react-pinterest/pull/10)
+
 ## Done:
 - [Authentication](https://github.com/nss-evening-cohort-13/react-pinterest/pull/1/files)
 - [Create Routes and Views](https://github.com/nss-evening-cohort-13/react-pinterest/pull/2/files)
