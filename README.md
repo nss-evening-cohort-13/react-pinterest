@@ -50,11 +50,6 @@
         />
         <Route
           exact
-          path='/board-form'
-          component={() => <BoardForm authed={authed} />}
-        />
-        <Route
-          exact
           path='/boards'
           component={() => <Boards authed={authed} />}
         />
