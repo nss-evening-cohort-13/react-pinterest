@@ -45,7 +45,7 @@ export default class Home extends React.Component {
   render() {
     return (
       <div>
-        <h1 className='mt-5'>Pins you may like</h1>
+        <h1 className='mt-5'>Welcome to React Pinterest</h1>
         <div className='d-flex flex-wrap container justify-content-center'>
         {!this.state.loading && this.loadComponent()}
         </div>
