@@ -29,43 +29,43 @@ export default function Routes({ user }) {
         <Route
           exact
           path='/'
-          component={() => <Home user={user} />}
+          component={Home}
         />
         <PrivateRoute
           exact
           path='/pin-details'
-          component={() => <PinDetails user={user} />}
+          component={PinDetails}
           // since we are checking if a user is authed, we have to pass the user as a props to Private Route so that it can determine if the route should be rendered or redirected. We do this in every route that uses Private Route
           user={user}
         />
         <PrivateRoute
           exact
           path='/pins'
-          component={() => <Pins user={user} />}
+          component={Pins}
           user={user}
         />
         <PrivateRoute
           exact
           path='/pin-form'
-          component={() => <PinForm user={user} />}
+          component={PinForm}
           user={user}
         />
         <PrivateRoute
           exact
           path='/boards/:id'
-          component={(props) => <SingleBoard user={user} {...props} />}
+          component={SingleBoard}
           user={user}
         />
         <PrivateRoute
           exact
           path='/search/:term/:type'
-          component={(props) => <SearchResults {...props} />}
+          component={SearchResults}
           user={user}
         />
         <PrivateRoute
           exact
           path='/boards'
-          component={() => <Boards user={user} />}
+          component={Boards}
           user={user}
         />
         <Route component={NotFound} />
