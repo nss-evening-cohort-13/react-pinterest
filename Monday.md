@@ -7,7 +7,7 @@
 - CREATE: Create users table that stores users (Stretch)
 
 ## In Class
-- [Make Routes Private](https://github.com/nss-evening-cohort-13/react-pinterest/pull/10)
+- [Make Routes Private](https://github.com/nss-evening-cohort-13/react-pinterest/pull/10): We only want authenticated users into the application, so if they navigate to a URL, we want them to have to login to see the view
 
 ## Done:
 - [Authentication](https://github.com/nss-evening-cohort-13/react-pinterest/pull/1/files)
