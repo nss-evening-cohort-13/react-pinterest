@@ -13,11 +13,11 @@ const AppModal = (props) => {
   const toggle = () => setModal(!modal);
 
   return (
-    <div>
+    <div className={`app-modal ${className}`}>
       <Button color={props.btnColor} onClick={toggle}>
-        <i className={`fas ${props.icon} fa-1x`}></i>
+        <i className={`fas ${props.icon} fa-1x`}></i> {props.title}
       </Button>
-      <Modal isOpen={modal} toggle={toggle} className={className}>
+      <Modal isOpen={modal} toggle={toggle} className='modal-dialog-centered modal-lg'>
       <ModalHeader toggle={toggle}>{props.title}</ModalHeader>
         <ModalBody>{props.children}</ModalBody>
       </Modal>

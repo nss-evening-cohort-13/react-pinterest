@@ -27,7 +27,7 @@ export default function MyNavbar(props) {
   const toggle = () => setIsOpen(!isOpen);
   return user && (
     <div>
-      <Navbar color='dark' dark expand='md' className='justify-content-between'>
+      <Navbar color='dark' dark expand='md' className='justify-content-between fixed-top'>
         <Link className='navbar-brand' to='/'>
           Pinterest
         </Link>

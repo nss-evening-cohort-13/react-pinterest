@@ -48,11 +48,11 @@ export default class Boards extends React.Component {
           <Loader />
         ) : (
           <>
-          <PageHeader user={user} />
-          <h1>Boards</h1>
-          <AppModal title={'Add Board'} btnColor={'danger'} icon={'fa-plus-circle'}>
+          <AppModal title={'Add Board'} btnColor={'danger'} icon={'fa-plus-circle'} className='align-right'>
             <BoardForm onUpdate={this.getBoards} />
           </AppModal>
+          <PageHeader user={user} />
+          <h1>Boards</h1>
           <div className='d-flex flex-wrap justify-content-center container'>{showBoards()}</div>
           </>
         )}
