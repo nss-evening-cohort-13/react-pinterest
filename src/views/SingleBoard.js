@@ -2,9 +2,6 @@ import React from 'react';
 import { getBoardPins, getPin } from '../helpers/data/pinData';
 import { getSingleBoard } from '../helpers/data/boardData';
 import PinsCard from '../components/Cards/PinsCard';
-import PageHeader from '../components/PageHeader';
-import AppModal from '../components/Modal';
-import BoardForm from '../components/Forms/BoardForm';
 
 export default class SingleBoard extends React.Component {
   state = {
@@ -13,24 +10,21 @@ export default class SingleBoard extends React.Component {
   };
 
   componentDidMount() {
-    // 0. Make a call to the API that gets the board info
+    // 1. Pull boardId from URL params
     const boardId = this.props.match.params.id;
-    this.getBoardInfo(boardId);
-
-    // 1. Make a call to the API that returns the pins associated with this board and set to state.
-    this.getPins(boardId)
-      // because we did a promise.all, the response will not resolve until all the promises are completed
-      .then((resp) => (
-        this.setState({ pins: resp })
-      ));
-  }
-
-  getBoardInfo = (boardId) => {
+    // 2. Make a call to the API that gets the board info
     getSingleBoard(boardId).then((response) => {
       this.setState({
         board: response,
       });
     });
+
+    // 3. Make a call to the API that returns the pins associated with this board and set to state.
+    this.getPins(boardId)
+      // because we did a promise.all, the response will not resolve until all the promises are completed
+      .then((resp) => (
+        this.setState({ pins: resp })
+      ));
   }
 
   getPins = (boardId) => (
@@ -48,26 +42,18 @@ export default class SingleBoard extends React.Component {
 
   render() {
     const { pins, board } = this.state;
-    const { user } = this.props;
     const renderPins = () => (
-      pins.length
-        ? pins.map((pin) => (
-          <PinsCard key={pin.firebaseKey} pin={pin} />
-        )) : (
-          <h2>PLACE "ADD PIN BUTTON" HERE</h2>
-        )
+      // 4. map over the pins in state
+      pins.map((pin) => (
+         <PinsCard key={pin.firebaseKey} pin={pin} />
+      ))
     );
 
-    // 3. Render the pins on the DOM
+    // 5. Render the pins on the DOM
     return (
       <div>
-        <AppModal title={'Edit Board'} btnColor={'warning'} icon={'fa-pen-nib'} className='align-right'>
-          <BoardForm board={board} onUpdate={this.getBoardInfo} />
-        </AppModal>
-        <PageHeader user={user} />
-        <h1>{board.name} Board Pins</h1>
-        <h4>{board.description}</h4>
-        <div className='d-flex flex-wrap container justify-content-center'>
+        <h1>{board.name}</h1>
+        <div className='d-flex flex-wrap container'>
           {renderPins()}
         </div>
       </div>

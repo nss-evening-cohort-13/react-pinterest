@@ -4,6 +4,11 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/89146934-9ad7-47eb-b494-826987924d22/deploy-status)](https://app.netlify.com/sites/ec13-react-pinterest/deploys)
 
+
+## Views
+<img src='./react-pinterest.gif' alt='boards screen shot' style='width: 500px;'/> 
+
+
 ## Intial Plan Walk Through
 - [Here is the overview](https://www.educreations.com/lesson/view/react-pinterest-planning/56971203/?s=Ysi5qH&ref=app) of what we decided as a class to complete for our React Pinterest project
 - [Issue Ticket](https://github.com/nss-evening-cohort-13/student-help/issues/112) for discussion
