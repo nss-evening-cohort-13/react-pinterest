@@ -43,7 +43,7 @@ export default class SearchResults extends Component {
   // allow searches to take place when the search results component is already mounted and it rerenders based on the changes identified in this function
   componentDidUpdate(prevProps, prevState) {
     // only update/rerender component if the params have changed
-    if (prevState.searchTerm !== this.props.match.params.term.toLowerCase()) {
+    if (prevState.searchTerm !== this.props.match.params.term.toLowerCase() || prevState.searchType !== this.props.match.params.type) {
       this.performSearch();
     }
   }
