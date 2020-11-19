@@ -15,7 +15,7 @@ import SearchResults from '../views/SearchResults';
 const PrivateRoute = ({ component: Component, user, ...rest }) => {
   // when we call this function in the return, it is looking for an argument. `props` here is taco.
   const routeChecker = (taco) => (user
-    ? (<Component {...taco} />)
+    ? (<Component {...taco} user={user} />)
     : (<Redirect to={{ pathname: '/', state: { from: taco.location } }} />));
     // this render method is one we can use instead of component. Since the components are being dynamically created, we use render. Read the docs for more info: https://reactrouter.com/web/api/Route/render-func
 
@@ -29,7 +29,7 @@ export default function Routes({ user }) {
         <Route
           exact
           path='/'
-          component={Home}
+          component={() => <Home user={user} />}
         />
         <PrivateRoute
           exact
