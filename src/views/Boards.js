@@ -3,6 +3,9 @@ import { getAllUserBoards } from '../helpers/data/boardData';
 import BoardsCard from '../components/Cards/BoardsCard';
 import Loader from '../components/Loader';
 import getUid from '../helpers/data/authData';
+import AppModal from '../components/Modal';
+import BoardForm from '../components/Forms/BoardForm';
+import PageHeader from '../components/PageHeader';
 
 export default class Boards extends React.Component {
   state = {
@@ -11,6 +14,10 @@ export default class Boards extends React.Component {
   }
 
   componentDidMount() {
+    this.getBoards();
+  }
+
+  getBoards = () => {
     const currentUserId = getUid();
     getAllUserBoards(currentUserId).then((response) => {
       this.setState({
@@ -31,6 +38,7 @@ export default class Boards extends React.Component {
 
   render() {
     const { boards, loading } = this.state;
+    const { user } = this.props;
     const showBoards = () => (
       boards.map((board) => <BoardsCard key={board.firebaseKey} board={board} />)
     );
@@ -40,8 +48,12 @@ export default class Boards extends React.Component {
           <Loader />
         ) : (
           <>
-          <h2>Here are all of your boards</h2>
-          <div className='d-flex flex-wrap container'>{showBoards()}</div>
+          <AppModal title={'Add Board'} btnColor={'danger'} icon={'fa-plus-circle'} className='align-right'>
+            <BoardForm onUpdate={this.getBoards} />
+          </AppModal>
+          <PageHeader user={user} />
+          <h1>Boards</h1>
+          <div className='d-flex flex-wrap justify-content-center container'>{showBoards()}</div>
           </>
         )}
       </>
