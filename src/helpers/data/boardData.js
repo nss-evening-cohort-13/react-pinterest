@@ -14,4 +14,22 @@ const getSingleBoard = (boardId) => new Promise((resolve, reject) => {
   }).catch((error) => reject(error));
 });
 
-export { getAllUserBoards, getSingleBoard };
+const createBoard = (object) => new Promise((resolve, reject) => {
+  axios.post(`${baseUrl}/boards.json`, object)
+    .then((response) => {
+      console.warn(response);
+      axios.patch(`${baseUrl}/boards/${response.data.name}.json`, { firebaseKey: response.data.name }).then(resolve);
+    }).catch((error) => reject(error));
+});
+
+const updateBoard = (object) => new Promise((resolve, reject) => {
+  axios.patch(`${baseUrl}/boards/${object.firebaseKey}.json`, object)
+    .then(resolve).catch((error) => reject(error));
+});
+
+export {
+  getAllUserBoards,
+  getSingleBoard,
+  createBoard,
+  updateBoard,
+};
